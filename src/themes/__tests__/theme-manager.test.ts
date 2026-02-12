@@ -29,6 +29,10 @@ describe("theme manager", () => {
     const academicLayouts = await getLayoutNamesFromTool();
     expect(academicLayouts).toContain("two-column");
 
+    setActiveTheme("gaia-mini-mist");
+    const gaiaMiniMistLayouts = await getLayoutNamesFromTool();
+    expect(gaiaMiniMistLayouts).toContain("two-column");
+
     setActiveTheme("default");
     const defaultLayouts = await getLayoutNamesFromTool();
     expect(defaultLayouts).not.toContain("two-column");

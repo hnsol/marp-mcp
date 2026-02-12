@@ -1,10 +1,11 @@
 import type { ThemeDefinition } from "../types.js";
-import { titleLayout } from "../gaia/layouts/title.js";
-import { sectionLayout } from "../gaia/layouts/section.js";
-import { listLayout } from "../gaia/layouts/list.js";
-import { tableLayout } from "../gaia/layouts/table.js";
-import { imageRightLayout } from "../gaia/layouts/image-right.js";
-import { imageCenterLayout } from "../gaia/layouts/image-center.js";
+import { titleLayout } from "./layouts/title.js";
+import { sectionLayout } from "./layouts/section.js";
+import { listLayout } from "./layouts/list.js";
+import { tableLayout } from "./layouts/table.js";
+import { twoColumnLayout } from "./layouts/two-column.js";
+import { imageRightLayout } from "./layouts/image-right.js";
+import { imageCenterLayout } from "./layouts/image-center.js";
 import { gaiaMiniMistCss } from "./css.js";
 
 export const gaiaMiniMistTheme: ThemeDefinition = {
@@ -16,6 +17,7 @@ export const gaiaMiniMistTheme: ThemeDefinition = {
     section: sectionLayout,
     list: listLayout,
     table: tableLayout,
+    "two-column": twoColumnLayout,
     "image-right": imageRightLayout,
     "image-center": imageCenterLayout,
   },
