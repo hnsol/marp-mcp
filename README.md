@@ -46,7 +46,7 @@ Use `-t` or `--theme` args for theme selection. Choose from `default`, `gaia`, `
 
 ### Style selection
 
-Use `-s` or `--style` args for style selection. Choose from `default` or `rich`. Styles are designed for the `default` theme:
+Use `-s` or `--style` args for style selection. Choose from `default`, `rich`, or `gaia-mini-mist`. `rich` is designed for the `default` theme, and `gaia-mini-mist` is designed for the `gaia` theme. For consistency, use the canonical kebab-case style name:
 
 ```json
 {
@@ -55,7 +55,7 @@ Use `-s` or `--style` args for style selection. Choose from `default` or `rich`.
     "-y",
     "@masaki39/marp-mcp@latest",
     "-s",
-    "rich"]
+    "gaia-mini-mist"]
 }
 ```
 

@@ -37,17 +37,26 @@ describe("Style Registry", () => {
     const def = getStyle("default");
     expect(def).toBeDefined();
     expect(def!.name).toBe("default");
+
+    const gaiaMiniMist = getStyle("gaia-mini-mist");
+    expect(gaiaMiniMist).toBeDefined();
+    expect(gaiaMiniMist!.name).toBe("gaia-mini-mist");
   });
 
-  it("getStyle returns undefined for unknown styles", () => {
+
+  it("getStyle returns undefined for unknown or non-canonical style names", () => {
     const unknown = getStyle("nonexistent");
     expect(unknown).toBeUndefined();
+
+    const nonCanonical = getStyle("GaiaMiniMist");
+    expect(nonCanonical).toBeUndefined();
   });
 
   it("getAvailableStyleNames returns all style names", () => {
     const names = getAvailableStyleNames();
     expect(names).toContain("default");
     expect(names).toContain("rich");
+    expect(names).toContain("gaia-mini-mist");
   });
 });
 
