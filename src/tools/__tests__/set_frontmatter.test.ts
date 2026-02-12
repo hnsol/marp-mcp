@@ -115,4 +115,18 @@ describe("setFrontmatter", () => {
     const response = JSON.parse(responseText);
     expect(response.style).toBe("default");
   });
+  it("injects theme CSS when gaia-mini-mist theme is active", async () => {
+    const filePath = path.join(tempDir, "theme-css.md");
+    await fs.writeFile(filePath, "# Slide 1\n", "utf-8");
+    setActiveTheme("gaia-mini-mist");
+    setActiveStyle("default");
+
+    await setFrontmatter({ filePath });
+
+    const updated = await fs.readFile(filePath, "utf-8");
+    expect(updated).toContain("theme: gaia-mini-mist");
+    expect(updated).toMatch(/^style:/m);
+    expect(updated).toContain("@theme gaia-mini-mist");
+  });
+
 });

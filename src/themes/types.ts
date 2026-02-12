@@ -14,15 +14,21 @@ export interface SlideLayout {
   template: (params: Record<string, unknown>) => string;
 }
 
-export type ThemeName = "academic" | "default" | "gaia" | "uncover";
+export type ThemeName =
+  | "academic"
+  | "default"
+  | "gaia"
+  | "gaia-mini-mist"
+  | "uncover";
 
 export interface ThemeDefinition {
   name: ThemeName;
   description: string;
+  css?: string;
   layouts: Record<string, SlideLayout>;
 }
 
-export type StyleName = "default" | "rich" | "gaia-mini-mist";
+export type StyleName = "default" | "rich";
 
 export interface StyleDefinition {
   name: StyleName;

@@ -22,7 +22,7 @@ Add to your MCP client configuration:
 
 ### Theme selection
 
-Use `-t` or `--theme` args for theme selection. Choose from `default`, `gaia`, `uncover`, or `academic`:
+Use `-t` or `--theme` args for theme selection. Choose from `default`, `gaia`, `gaia-mini-mist`, `uncover`, or `academic`:
 
 ```json
 {
@@ -46,7 +46,7 @@ Use `-t` or `--theme` args for theme selection. Choose from `default`, `gaia`, `
 
 ### Style selection
 
-Use `-s` or `--style` args for style selection. Choose from `default`, `rich`, or `gaia-mini-mist`. `rich` is designed for the `default` theme, and `gaia-mini-mist` is designed for the `gaia` theme. For consistency, use the canonical kebab-case style name:
+Use `-s` or `--style` args for style selection. Choose from `default` or `rich`. `rich` is designed for the `default` theme:
 
 ```json
 {
@@ -55,7 +55,7 @@ Use `-s` or `--style` args for style selection. Choose from `default`, `rich`, o
     "-y",
     "@masaki39/marp-mcp@latest",
     "-s",
-    "gaia-mini-mist"]
+    "rich"]
 }
 ```
 
@@ -96,6 +96,7 @@ Rendered samples (GitHub Pages):
 - [Default theme, default style](https://masaki39.github.io/marp-mcp/example-default-default-style.html)
 - [Default theme, rich style](https://masaki39.github.io/marp-mcp/example-default-rich-style.html)
 - [Gaia theme](https://masaki39.github.io/marp-mcp/example-gaia-theme.html)
+- [Gaia Mini Mist theme](https://masaki39.github.io/marp-mcp/example-gaia-mini-mist-theme.html)
 - [Uncover theme](https://masaki39.github.io/marp-mcp/example-uncover-theme.html)
 
 ## Development

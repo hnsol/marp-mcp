@@ -17,7 +17,7 @@ describe("theme manager", () => {
 
   it("exposes all registered themes", () => {
     const names = getAvailableThemeNames();
-    const expectedThemes = ["default", "academic", "gaia", "uncover"];
+    const expectedThemes = ["default", "academic", "gaia", "gaia-mini-mist", "uncover"];
     expect(names).toEqual(expect.arrayContaining(expectedThemes));
     for (const themeName of expectedThemes) {
       expect(getTheme(themeName)).toBeDefined();
@@ -32,6 +32,13 @@ describe("theme manager", () => {
     setActiveTheme("default");
     const defaultLayouts = await getLayoutNamesFromTool();
     expect(defaultLayouts).not.toContain("two-column");
+  });
+
+  it("resolves gaia-mini-mist theme", () => {
+    setActiveTheme("gaia-mini-mist");
+    const theme = getActiveTheme();
+    expect(theme.name).toBe("gaia-mini-mist");
+    expect(theme.css).toContain("@theme gaia-mini-mist");
   });
 
   it("adds lead styling support in Gaia title layout", () => {
