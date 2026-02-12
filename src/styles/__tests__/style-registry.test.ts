@@ -37,10 +37,6 @@ describe("Style Registry", () => {
     const def = getStyle("default");
     expect(def).toBeDefined();
     expect(def!.name).toBe("default");
-
-    const gaiaMiniMist = getStyle("gaia-mini-mist");
-    expect(gaiaMiniMist).toBeDefined();
-    expect(gaiaMiniMist!.name).toBe("gaia-mini-mist");
   });
 
 
@@ -56,7 +52,6 @@ describe("Style Registry", () => {
     const names = getAvailableStyleNames();
     expect(names).toContain("default");
     expect(names).toContain("rich");
-    expect(names).toContain("gaia-mini-mist");
   });
 });
 

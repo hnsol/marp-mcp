@@ -13,8 +13,6 @@ import type { ToolResponse } from "../types/common.js";
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 
-type TargetKey = "marp" | "theme" | "header" | "paginate" | "style";
-
 export const setFrontmatterSchema = z.object({
   filePath: z.string().describe("Absolute path to the Marp markdown file"),
   header: z
@@ -97,7 +95,8 @@ export async function setFrontmatter({
   const data = parsed.data as Record<string, any>;
 
   // Get active theme and style
-  const activeTheme = getActiveTheme().name;
+  const activeThemeDef = getActiveTheme();
+  const activeTheme = activeThemeDef.name;
   const activeStyleDef = getActiveStyle();
 
   // Determine header value
@@ -119,9 +118,11 @@ export async function setFrontmatter({
     paginate: paginateValue,
   };
 
-  // Inject style CSS if active style has CSS
-  if (activeStyleDef.css) {
-    newData.style = activeStyleDef.css;
+  // Inject CSS from active theme/style when available
+  const cssBlocks = [activeThemeDef.css, activeStyleDef.css]
+    .filter((css): css is string => Boolean(css && css.trim()));
+  if (cssBlocks.length > 0) {
+    newData.style = cssBlocks.join("\n\n");
   }
 
   // Stringify with gray-matter

@@ -1,6 +1,7 @@
 import { academicTheme } from "./academic/index.js";
 import { defaultTheme } from "./default/index.js";
 import { gaiaTheme } from "./gaia/index.js";
+import { gaiaMiniMistTheme } from "./gaia-mini-mist/index.js";
 import { uncoverTheme } from "./uncover/index.js";
 import type { ThemeDefinition, ThemeName } from "./types.js";
 
@@ -8,6 +9,7 @@ const themes = {
   academic: academicTheme,
   default: defaultTheme,
   gaia: gaiaTheme,
+  "gaia-mini-mist": gaiaMiniMistTheme,
   uncover: uncoverTheme,
 } satisfies Record<ThemeName, ThemeDefinition>;
 
